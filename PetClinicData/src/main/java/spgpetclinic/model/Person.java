@@ -7,7 +7,6 @@ import javax.persistence.MappedSuperclass;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity{
     @Column(name = "first_name")
@@ -21,6 +20,5 @@ public class Person extends BaseEntity{
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
 
 }
