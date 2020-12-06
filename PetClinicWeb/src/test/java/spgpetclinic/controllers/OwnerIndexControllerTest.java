@@ -51,20 +51,12 @@ class OwnerIndexControllerTest {
                 .andExpect(model().attribute("owners",hasSize(2)));
 
     }
-    @Test
-    void ownersIndexSecondUrl() throws Exception {
-        when(ownerService.findAll()).thenReturn(ownerSet);
-        mockMvc.perform(get("/owners"))
-                .andExpect(view().name("owners/index"))
-                .andExpect(status().isOk())
-                .andExpect(model().attribute("owners",hasSize(2)));
 
-    }
 
     @Test
     void findOwner() throws Exception {
         mockMvc.perform(get("/owners/find"))
-                .andExpect(view().name("notImplemented"))
+                .andExpect(view().name("owners/findOwners"))
                 .andExpect(status().isOk());
 
         verifyNoInteractions(ownerService);
